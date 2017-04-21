@@ -12,18 +12,22 @@
 * canvasId: id of target canvas.
 * rgb: RGB color.
 *=== Parameters for returned function ===
-* x0 and y0: initial values.
-* delay: interval of drawing a line in milliseconds.
-* sampleX and sampleY: [optional] csv formatted numerical texts.
-*=== Method of returned function ===
-* end(): method to end simulation and to return Log object.
+* - title: description of simulation.
+* - x0 and y0: initial values.
+* - maxStep: the max step that is equivalent to positive integer;
+*     simulating process is not canceled without calling method
+*     "end()" when maxStep = 0.
+* - sampleX and sampleY: [optional] csv formatted numerical texts.
+*=== Property and method of returned function ===
+* - log: result of simulation as an object.
+* - end(): method to end simulation, shows message.
 *============================================================
 */
 function getRndWalkL(canvasId,rgb){
     //canvasId: id of target canvas
     //rgb: RGB color
     var slf=window,c=slf.document.getElementById(canvasId).getContext('2d'),cW=c.canvas.width,cH=c.canvas.height,
-        Log={step:0,x0:0,y0:0,x:0,y:0,timeStart:'',timeEnd:'',type:'lines'},drwId,x=0,y=0,d=0-1,dx=0,dy=0,regEx=/^[-+]?[0-9]+(?:\.[0-9]+)?$/,
+        _Log={title:'',step:0,maxStep:0,color:rgb,x0:0,y0:0,x:0,y:0,time:'',type:'lines'},drwId,x=0,y=0,d=0-1,dx=0,dy=0,regEx=/^[-+]?[0-9]+(?:\.[0-9]+)?$/,
         /*this function returns random sample from a given sample*/
         Sample=function(csv){
             //csv: a csv formatted text
@@ -31,19 +35,28 @@ function getRndWalkL(canvasId,rgb){
             return csvAr[Math.floor(Math.random()*n)];
         },
         /*this function draws a line on canvas*/
-        drw=function(x0,y0,delay,sampleX,sampleY){
+        drw=function(title,x0,y0,maxStep,sampleX,sampleY){
+            //title: description of simulation
             //x0 and y0: initial values
-            //delay: interval of drawing a line in milliseconds
+            //maxStep: the max step that is equivalent to positive integer; simulating process is not canceled without calling method "end()" when maxStep = 0
             //sampleX and sampleY: [optional] csv formatted numerical texts
-            /*=== resetting Log object ===*/
-            Log.timeStart=slf.Date(),Log.timeEnd='',Log.step=0,Log.x0=x0,Log.y0=y0,Log.x=x0,Log.y=y0;
-            //method to end simulation and to return Log object
+            /*=== resetting _Log object ===*/
+            _Log.title=title,_Log.time=slf.Date(),_Log.step=0,_Log.maxStep=maxStep,_Log.x0=x0,_Log.y0=y0,_Log.x=x0,_Log.y=y0;
+            //log: result of simulation as an object
+            drw.log={};
+            //end(): method to end simulation, shows result
             drw.end=function(){
-                if(!!drwId){slf.clearInterval(drwId),drwId=null,Log.timeEnd=slf.Date();return Log;}
+                if(!!drwId){
+                    var msg='';
+                    slf.clearInterval(drwId),drwId=null;
+                    msg=_Log.title+'\ncolor: '+_Log.color+'\n(x0,y0): ('+_Log.x0+','+_Log.y0+')\ntype: '+_Log.type+'\nsteps: '+_Log.step+'/'+_Log.maxStep;
+                    drw.log=slf.JSON.parse(slf.JSON.stringify(_Log));
+                    slf.alert(msg);
+                }
             };
             c.lineWidth=1,c.strokeStyle=rgb,x=x0,y=y0;
-            /*=== Log object is updated ===*/
-            Log.step+=1;
+            /*=== _Log object is updated ===*/
+            _Log.step+=1;
             drwId=slf.setInterval(function(){
                 c.beginPath(),c.moveTo(x,y);
                 d=-d;
@@ -56,9 +69,11 @@ function getRndWalkL(canvasId,rgb){
                 y=y<0?0:y;
                 y=y>+cH?+cH:y;
                 c.lineTo(x,y),c.stroke();
-                /*=== Log object is updated ===*/
-                Log.step+=1,Log.x=x,Log.y=y;
-            },delay);
+                /*=== _Log object is updated ===*/
+                _Log.step+=1,_Log.x=x,_Log.y=y;
+                //it stops the current simulation if "_Log.step = maxStep"
+                if(!(_Log.step!=maxStep)){drw.end();}
+            },4);
         };
     return drw;
 };
