@@ -12,7 +12,8 @@ These functions return function that simulates random walk in a closed system.
 * `getRndWalkL(canvasId,rgb)`
 
 ## Script
-* 
+* `getRndWalkL.js`
+* `getRndWalkP.js`
 
 ## Paremeter
 * `canvasId`: id of target canvas.  
