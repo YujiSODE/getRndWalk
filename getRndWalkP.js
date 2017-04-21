@@ -14,9 +14,8 @@
 *=== Parameters for returned function ===
 * - title: description of simulation.
 * - x0 and y0: initial values.
-* - maxStep: the max step that is equivalent to positive integer;
-*     simulating process is not canceled without calling method
-*     "end()" when maxStep = 0.
+* - maxStep: the max step that is equivalent to positive integer; simulating process is not canceled
+*   without calling method "end()" when maxStep = 0.
 * - sampleX and sampleY: [optional] csv formatted numerical texts.
 *=== Property and method of returned function ===
 * - log: result of simulation as an object.
