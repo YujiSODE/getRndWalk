@@ -20,7 +20,7 @@
 * - sampleX and sampleY: [optional] csv formatted numerical texts.
 *=== Property and method of returned function ===
 * - log: result of simulation as an object.
-* - end(): method to end simulation; shows result.
+* - end(): method to end simulation; it shows result.
 *============================================================
 */
 function getRndWalkP(canvasId,rgb){
