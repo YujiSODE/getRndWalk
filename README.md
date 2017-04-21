@@ -1,5 +1,15 @@
 # getRndWalk
-The interface for simulating random walk in a closed system.
+The interface for simulating random walk in a closed system.  
+https://github.com/YujiSODE/getRndWalk
+
+>Copyright (c) 2017 Yuji SODE \<yuji.sode@gmail.com\>  
+>This software is released under the MIT License.  
+>See LICENSE or http://opensource.org/licenses/mit-license.php
+______
+
+These functions return function that simulates random walk in a closed system.  
+* `getRndWalkP(canvasId,rgb)`
+* `getRndWalkL(canvasId,rgb)`
 
 ## Paremeter
 * `canvasId`: id of target canvas.
