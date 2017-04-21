@@ -14,13 +14,12 @@
 *=== Parameters for returned function ===
 * - title: description of simulation.
 * - x0 and y0: initial values.
-* - maxStep: the max step that is equivalent to positive integer;
-*     simulating process is not canceled without calling method
-*     "end()" when maxStep = 0.
+* - maxStep: the max step that is equivalent to positive integer; simulating process is not canceled
+*   without calling method "end()" when maxStep = 0.
 * - sampleX and sampleY: [optional] csv formatted numerical texts.
 *=== Property and method of returned function ===
 * - log: result of simulation as an object.
-* - end(): method to end simulation; it shows message.
+* - end(): method to end simulation; it shows result.
 *============================================================
 */
 function getRndWalkL(canvasId,rgb){
@@ -44,7 +43,7 @@ function getRndWalkL(canvasId,rgb){
             _Log.title=title,_Log.time=slf.Date(),_Log.step=0,_Log.maxStep=maxStep,_Log.x0=x0,_Log.y0=y0,_Log.x=x0,_Log.y=y0;
             //log: result of simulation as an object
             drw.log={};
-            //end(): method to end simulation, shows result
+            //end(): method to end simulation; it shows result
             drw.end=function(){
                 if(!!drwId){
                     var msg='';
