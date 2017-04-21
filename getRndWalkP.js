@@ -44,7 +44,7 @@ function getRndWalkP(canvasId,rgb){
             _Log.title=title,_Log.time=slf.Date(),_Log.step=0,_Log.maxStep=maxStep,_Log.x0=x0,_Log.y0=y0,_Log.x=x0,_Log.y=y0;
             //log: result of simulation as an object
             plt.log={};
-            //end(): method to end simulation, shows result
+            //end(): method to end simulation; it shows result
             plt.end=function(){
                 if(!!drwId){
                     var msg='';
