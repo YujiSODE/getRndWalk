@@ -8,19 +8,19 @@ https://github.com/YujiSODE/getRndWalk
 ______
 
 These functions return function that simulates random walk in a closed system.  
-* `getRndWalkP(canvasId,rgb)`
-* `getRndWalkL(canvasId,rgb)`
+* `getRndWalkP(canvasId,rgb)`: draw type = `points`
+* `getRndWalkL(canvasId,rgb)`: draw type = `lines`
 
 ## Script
 * `getRndWalkL.js`
 * `getRndWalkP.js`
 
 ## Paremeter
-* `canvasId`: id of target canvas.  
-
+* `canvasId`: id of target canvas.
 * `rgb`: RGB color.
 
-## Parameters for returned function
+## Returned function
+#### 1. Parameters for returned function
 * `title`: description of simulation.  
 
 * `x0` and `y0`: initial values.  
@@ -30,7 +30,19 @@ These functions return function that simulates random walk in a closed system.
   
 * `sampleX` and `sampleY`: [optional] csv formatted numerical texts.
 
-## Property and method of returned function
-* `logs`: array that has simulation results as an object.  
+#### 2. Property and method of returned function
+* `logs`: array that has simulation results as Log objects.  
 
 * `end()`: method to end simulation; it shows result.
+
+#### 3. Log objects
+These object can be accessed with a property `logs` in returned function, as an array.  
+A Log object has properties as follows:
+* `title`: description of simulation.
+* `step`: number of steps.
+* `maxStep`: number of the uppermost steps.
+* `color`: color for drawing.
+* `x0` and `y0`: initial values in a coordinates.
+* `x` and `y`: final values in a coordinates.
+* `time`: timestamp.
+* `type`: draw type (`points`|`lines`).
