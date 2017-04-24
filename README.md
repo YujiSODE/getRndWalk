@@ -16,8 +16,7 @@ These functions return function that simulates random walk in a closed system.
 * `getRndWalkP.js`
 
 ## Paremeter
-* `canvasId`: id of target canvas.  
-
+* `canvasId`: id of target canvas.
 * `rgb`: RGB color.
 
 ## Parameters for returned function
