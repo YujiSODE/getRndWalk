@@ -38,3 +38,13 @@ These functions return function that simulates random walk in a closed system.
 ## Log objects
 These object can be accessed with a property `logs` in returned function, as an array.  
 A Log object has properties as follows:
+* `title`:
+* `step`:
+* `maxStep`:
+* `color`:
+* `x0`:
+* `y0`:
+* `x`:
+* `y`:
+* `time`:
+* `type`:
