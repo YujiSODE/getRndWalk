@@ -18,7 +18,7 @@
 *   without calling method "end()" when maxStep = 0.
 * - sampleX and sampleY: [optional] csv formatted numerical texts.
 *=== Property and method of returned function ===
-* - logs: array that has simulation results as an object.
+* - logs: array that has simulation results as Log objects.
 * - end(): method to end simulation; it shows result.
 *============================================================
 */
@@ -39,7 +39,7 @@ function getRndWalkP(canvasId,rgb){
             //x0 and y0: initial values
             //maxStep: the max step that is equivalent to positive integer; simulating process is not canceled without calling method "end()" when maxStep = 0
             //sampleX and sampleY: [optional] csv formatted numerical texts
-            /*=== resetting _Log object ===*/
+            /*=== resetting Log object ===*/
             _Log.title=title,_Log.time=slf.Date(),_Log.step=0,_Log.maxStep=maxStep,_Log.x0=x0,_Log.y0=y0,_Log.x=x0,_Log.y=y0;
             //end(): method to end simulation; it shows result
             plt.end=function(){
@@ -52,7 +52,7 @@ function getRndWalkP(canvasId,rgb){
                 }
             };
             c.fillStyle=rgb,c.fillRect(x0,y0,1,1),x=x0,y=y0;
-            /*=== _Log object is updated ===*/
+            /*=== Log object is updated ===*/
             _Log.step+=1;
             drwId=slf.setInterval(function(){
                 d=-d;
@@ -65,13 +65,13 @@ function getRndWalkP(canvasId,rgb){
                 y=y<0?0:y;
                 y=y>+cH?+cH:y;
                 c.fillRect(x,y,1,1);
-                /*=== _Log object is updated ===*/
+                /*=== Log object is updated ===*/
                 _Log.step+=1,_Log.x=x,_Log.y=y;
                 //it stops the current simulation if "_Log.step = maxStep"
                 if(!(_Log.step!=maxStep)){plt.end();}
             },4);
         };
-    //logs: array that has simulation results as an object
+    //logs: array that has simulation results as Log objects
     plt.logs=[];
     return plt;
 };
