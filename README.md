@@ -31,6 +31,10 @@ These functions return function that simulates random walk in a closed system.
 * `sampleX` and `sampleY`: [optional] csv formatted numerical texts.
 
 ## Property and method of returned function
-* `logs`: array that has simulation results as an object.  
+* `logs`: array that has simulation results as Log objects.  
 
 * `end()`: method to end simulation; it shows result.
+
+## Log objects
+These object can be accessed with a property `logs` in returned function, as an array.  
+A Log object has properties as follows:
