@@ -19,7 +19,8 @@ These functions return function that simulates random walk in a closed system.
 * `canvasId`: id of target canvas.
 * `rgb`: RGB color.
 
-## Parameters for returned function
+## Returned function
+#### 1. Parameters for returned function
 * `title`: description of simulation.  
 
 * `x0` and `y0`: initial values.  
@@ -29,12 +30,12 @@ These functions return function that simulates random walk in a closed system.
   
 * `sampleX` and `sampleY`: [optional] csv formatted numerical texts.
 
-## Property and method of returned function
+#### 2. Property and method of returned function
 * `logs`: array that has simulation results as Log objects.  
 
 * `end()`: method to end simulation; it shows result.
 
-## Log objects
+#### 3. Log objects
 These object can be accessed with a property `logs` in returned function, as an array.  
 A Log object has properties as follows:
 * `title`: description of simulation.
