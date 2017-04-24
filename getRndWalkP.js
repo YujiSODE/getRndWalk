@@ -46,8 +46,8 @@ function getRndWalkP(canvasId,rgb){
                 if(!!drwId){
                     var msg='';
                     slf.clearInterval(drwId),drwId=null;
-                    msg=_Log.title+'\ncolor: '+_Log.color+'\n(x0,y0): ('+_Log.x0+','+_Log.y0+')\ntype: '+_Log.type+'\nsteps: '+_Log.step+'/'+_Log.maxStep;
                     plt.logs.push(slf.JSON.parse(slf.JSON.stringify(_Log)));
+                    msg=_Log.title+'\ncolor: '+_Log.color+'\n(x0,y0): ('+_Log.x0+','+_Log.y0+')\ntype: '+_Log.type+'\nsteps: '+_Log.step+'/'+_Log.maxStep;
                     slf.alert(msg);
                 }
             };
