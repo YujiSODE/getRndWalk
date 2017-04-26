@@ -20,7 +20,7 @@ These functions return function that simulates random walk in a closed system.
 * `rgb`: RGB color.
 
 ## Returned function
-1. `var y=getRndWalkP(canvasId,rgb);`|`var y=getRndWalkL(canvasId,rgb);`
+1. `var y=getRndWalkP(canvasId,rgb);`|`getRndWalkL(canvasId,rgb);`
 2. `y(title,x0,y0,maxStep[,sampleX,sampleY]);`
 3. `y.logs;`|`y.end();`
 
