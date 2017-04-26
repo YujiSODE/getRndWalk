@@ -7,19 +7,23 @@ https://github.com/YujiSODE/getRndWalk
 >See LICENSE or http://opensource.org/licenses/mit-license.php
 ______
 
-These functions return function that simulates random walk in a closed system.  
-* `getRndWalkP(canvasId,rgb)`: draw type = `points`
-* `getRndWalkL(canvasId,rgb)`: draw type = `lines`
+These functions return function that simulates random walk in a closed system.
 
 ## Script
-* `getRndWalkL.js`
-* `getRndWalkP.js`
+* `getRndWalkL.js`  
+  >`getRndWalkL(canvasId,rgb)`: draw type = `lines`
+* `getRndWalkP.js`  
+  >`getRndWalkP(canvasId,rgb)`: draw type = `points`
 
 ## Paremeter
 * `canvasId`: id of target canvas.
 * `rgb`: RGB color.
 
 ## Returned function
+1. `var y= getRndWalkP(canvasId,rgb)`|`getRndWalkL(canvasId,rgb);`
+2. `y(title,x0,y0,maxStep[,sampleX,sampleY]);`
+3. `y.logs;`|`y.end();`
+
 #### 1. Parameters for returned function
 * `title`: description of simulation.  
 

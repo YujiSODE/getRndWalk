@@ -11,6 +11,8 @@
 *=== Paremeter ===
 * - canvasId: id of target canvas.
 * - rgb: RGB color.
+*=== Returned function ===
+* - function(title,x0,y0,maxStep[,sampleX,sampleY]): function that simulates random walk.
 *=== Parameters for returned function ===
 * - title: description of simulation.
 * - x0 and y0: initial values.
