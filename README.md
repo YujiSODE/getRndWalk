@@ -7,7 +7,8 @@ https://github.com/YujiSODE/getRndWalk
 >See LICENSE or http://opensource.org/licenses/mit-license.php
 ______
 
-These functions return function that simulates random walk in a closed system.
+These functions return function that simulates random walk in a closed system.  
+![screenShot](./screenShot.png)
 
 ## Script
 * `getRndWalkL.js`  
