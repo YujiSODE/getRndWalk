@@ -9,7 +9,10 @@ ______
 
 These functions return function that simulates random walk in a closed system.  
 ![screenShot](./screenShot.png)  
-__Figure 1. Screenshot.__ 
+__Figure 1. Screenshot.__  
+__A.__ `type:"lines", maxStep: 5000`. __B.__ `type:"points", maxStep:1000, sampleX:'-1,1,2,-2', sampleY:"default"`.  
+__C.__ `type:"points", maxStep:1000, sampleX:'-1,1,2,-2', sampleY:'3,-3,1,-1'`.  
+__D.__ `type:"lines", maxStep:500, sampleX:'0.25,0.125', sampleY:'3,5,-3,-5'`.
 
 ## Script
 * `getRndWalkL.js`  
