@@ -8,7 +8,8 @@ https://github.com/YujiSODE/getRndWalk
 ______
 
 These functions return function that simulates random walk in a closed system.  
-![screenShot](./screenShot.png)
+![screenShot](./screenShot.png)  
+__Figure 1. Screenshot.__ 
 
 ## Script
 * `getRndWalkL.js`  
